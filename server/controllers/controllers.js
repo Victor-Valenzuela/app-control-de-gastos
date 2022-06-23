@@ -1,5 +1,5 @@
 //En este archivo se exportan las funciones(desde el archivo db que contiene las query para la base de datos) que se van a usar en el controlador. Aqui creo que se traba con el req.body y los try y catch en para manejar los errores y enviarlos a la vista.
-const { newUser, getId, newSpend, spentByCategory, spentByDate, spentMonth, deleteSpend, updateSpend, getById, deleteUser, getUserById, updateUser, getUserByEmail, sendMail, } = require('../db');
+const { newUser, getId, newSpend, spentByCategory, spentByDate, spentMonth, deleteSpend, updateSpend, getById, deleteUser, getUserById, updateUser, getUserByEmail, sendMail, } = require('../database/db');
 const jwt = require('jsonwebtoken');
 const secretKey = 'secretKey';
 const moment = require('moment');
