@@ -63,10 +63,10 @@ const imgRandomError = [
     'https://i.giphy.com/media/dmZzuYk5P3byHg3Ggk/giphy.webp',
     'https://c.tenor.com/lx2WSGRk8bcAAAAC/pulp-fiction-john-travolta.gif'
 ]
-const alertConfig = (e) => {
+const alertConfig = (e, text) => {
     if (e === 'success') {
         Swal.fire({
-            text: '¡Gasto añadido!',
+            text: text === 'Ingresos' ? '¡Ingreso agregado!' : '¡Gasto agregado!',
             imageUrl: imgRandomSuccess[Math.floor(Math.random() * imgRandomSuccess.length)],
             imageWidth: 300,
             imageHeight: 300,
@@ -78,7 +78,7 @@ const alertConfig = (e) => {
         })
     } else if (e === 'validacion') {
         Swal.fire({
-            text: '¡Gasto sólo deben ser números!',
+            text: '¡El monto sólo admite números!',
             imageUrl: imgRandomError[Math.floor(Math.random() * imgRandomError.length)],
             imageWidth: 300,
             imageHeight: 300,
@@ -90,7 +90,7 @@ const alertConfig = (e) => {
         })
     } else if (e === 'edit') {
         Swal.fire({
-            text: '¡Gasto editado!',
+            text: '¡Elemento editado!',
             imageUrl: 'https://c.tenor.com/uryrumlj7IIAAAAC/burns-excellent.gif',
             imageWidth: 300,
             imageHeight: 300,
@@ -186,7 +186,7 @@ export default function FormularioGasto() {
         } else if (!editing) {
             try {
                 await axios.post('/newgasto', gasto);
-                alertConfig('success');
+                alertConfig('success', categoria);
                 getGasto();
                 setFecha(new Date());
                 setCategoria('');
