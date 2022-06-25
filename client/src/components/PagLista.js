@@ -123,7 +123,7 @@ export default function Lista() {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                    text: 'Registro borrado!',
+                    text: '¡Registro borrado!',
                     imageUrl: 'https://c.tenor.com/P0tX6a_nVIkAAAAC/grinch-smile-grinch.gif',
                     imageWidth: 300,
                     imageHeight: 300,

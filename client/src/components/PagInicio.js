@@ -90,7 +90,7 @@ const alertConfig = (e, text) => {
         })
     } else if (e === 'edit') {
         Swal.fire({
-            text: '¡Elemento editado!',
+            text: '¡Registro editado!',
             imageUrl: 'https://c.tenor.com/uryrumlj7IIAAAAC/burns-excellent.gif',
             imageWidth: 300,
             imageHeight: 300,
